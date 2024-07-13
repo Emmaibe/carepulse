@@ -34,3 +34,11 @@ A
 :
 
 .env.local,1/f/1fa30fea3e9ae270a3c38a6113a3689d8987d108
+F
+lib/appwrite.config.ts,c/c/cc18a8bbfac3103f99530467f72dfe6e427e540e
+N
+lib/actions/patient.actions.ts,2/0/20a70185f399701d5a5a7fa64eddd91b0d6789f2
+@
+types/index.d.ts,f/b/fb862d0a09a31d6d19b3799b11be01b3122ca6b7
+G
+types/appwrite.types.ts,e/0/e01bec72b5093a3000d04008c3a350c9130661ae
