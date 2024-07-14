@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import {CustomFormField} from "@/components/CustomFormField";
 import {SubmitButton} from "@/components/SubmitButton";
@@ -49,9 +48,7 @@ export const PatientForm = () => {
 
             const user = await createUser(userData);
 
-            console.log(user)
-
-            if (user) router.push(`/patients/${user.id}/register`);
+            if (user) router.push(`/patients/${user.$id}/register`);
 
         } catch (error) {
             console.log(error)

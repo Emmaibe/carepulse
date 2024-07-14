@@ -21,19 +21,12 @@ M
 components/theme-provider.tsx,7/5/7547262ba314f5c8fa094fa8dda696f5fc79ba7c
 P
  components/forms/PatientForm.tsx,9/1/91f2e21856070cc0c7f39b0ac991849a36fb96db
-O
-components/forms/PatientFor.tsx,0/f/0f2b1175ebe314cc80acfcfbee01566c593260fb
 N
 components/CustomFormField.tsx,e/6/e60a19d74b787c3c215828df3b774c17112cf489
-K
-components/CustomButton.tsx,f/5/f539654d6cd8b33abd8e7373b0960f425dad62f0
 K
 components/SubmitButton.tsx,d/c/dc6774e425f84b3694d60a0a921119f773c93801
 A
 lib/validation.ts,8/1/8127e3ec6d3cbb77a8181dabaeb54f16cd579a7e
-:
-
-.env.local,1/f/1fa30fea3e9ae270a3c38a6113a3689d8987d108
 F
 lib/appwrite.config.ts,c/c/cc18a8bbfac3103f99530467f72dfe6e427e540e
 N
@@ -42,3 +35,18 @@ N
 types/index.d.ts,f/b/fb862d0a09a31d6d19b3799b11be01b3122ca6b7
 G
 types/appwrite.types.ts,e/0/e01bec72b5093a3000d04008c3a350c9130661ae
+4
+.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+A
+app/patients/page,1/0/102a6f3ce3ba22dfc47f5436fd8e7eb9cfb835c5
+E
+app/patients/page.tsx,6/4/646fc05ab1728efa6a0dad93fc001030d4f8bc87
+W
+'app/patients/[userId]/register/page.tsx,f/3/f37c38c6bfe5588f582e78931ad50ba6dce7616c
+Q
+!components/forms/RegisterForm.tsx,8/0/806d7cfacf6924e1419e427444545b715d13f4ad
+B
+constants/index.ts,1/d/1d4700aac679f25f838112521b725367c95ad81a
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
