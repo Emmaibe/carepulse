@@ -1,8 +1,8 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import {zodResolver} from "@hookform/resolvers/zod"
+import {useForm} from "react-hook-form"
+import {z} from "zod"
 import {Form, FormControl} from "@/components/ui/form"
 import {CustomFormField} from "@/components/CustomFormField";
 import {SubmitButton} from "@/components/SubmitButton";
@@ -12,10 +12,11 @@ import {useRouter} from "next/navigation";
 import {createUser} from "@/lib/actions/patient.actions";
 import {FormFieldType} from "@/components/forms/PatientForm";
 import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
-import {Doctors, GenderOptions} from "@/constants";
+import {Doctors, GenderOptions, IdentificationTypes} from "@/constants";
 import {Label} from "@/components/ui/label";
 import {SelectItem} from "@/components/ui/select";
 import Image from "next/image";
+import {FileUploader} from "@/components/FileUploader";
 
 export const RegisterForm = ({ user }: { user: User }) => {
     const router = useRouter();
@@ -257,9 +258,108 @@ export const RegisterForm = ({ user }: { user: User }) => {
                         control={form.control}
                         name="currentMedication"
                         label="Current Medication (if any)"
-                        placeholder="Ibuprofen 200mg Paracetamol 500mg"
+                        placeholder="Ibuprofen 200mg, Paracetamol 500mg"
                     />
                 </div>
+
+                <div className="flex flex-col gap-6 xl:flex-row">
+                    <CustomFormField
+                        fieldType={FormFieldType.TEXT_AREA}
+                        control={form.control}
+                        name="familyMedicalHistory"
+                        label="Family medical history"
+                        placeholder="Mother had high blood pressure, Father had diabetes"
+                    />
+
+                    <CustomFormField
+                        fieldType={FormFieldType.TEXT_AREA}
+                        control={form.control}
+                        name="pastMedicalHistory"
+                        label="Past medical history"
+                        placeholder="Appendectomy, Tonsillectomy"
+                    />
+                </div>
+
+                <section className="space-y-6">
+                    <div className="mb-9 space-y-1">
+                        <h2 className="sub-header">
+                            Identification and Verification
+                        </h2>
+                    </div>
+                </section>
+
+                <CustomFormField
+                    fieldType={FormFieldType.SELECT}
+                    control={form.control}
+                    name="identificationType"
+                    label="Identification Type"
+                    placeholder="Select an identification type"
+                >
+                    {
+                        IdentificationTypes.map(
+                            (type) => (
+                                <SelectItem
+                                    key={type}
+                                    value={type}
+                                >
+                                    {type}
+                                </SelectItem>
+                            )
+                        )
+                    }
+                </CustomFormField>
+
+                <CustomFormField
+                    fieldType={FormFieldType.INPUT}
+                    control={form.control}
+                    name="identificationNumber"
+                    label="Identification number"
+                    placeholder="123456789"
+                />
+
+                <CustomFormField
+                    fieldType={FormFieldType.SKELETON}
+                    control={form.control}
+                    name="identificationDocument"
+                    label="Scanned copy of identification document"
+                    renderSkeleton={(field) => (
+                        <FormControl>
+                            <FileUploader
+                                files={field.value}
+                                onChange={field.onChange}
+                            />
+                        </FormControl>
+                    )}
+                />
+
+                <section className="space-y-6">
+                    <div className="mb-9 space-y-1">
+                        <h2 className="sub-header">
+                            Consent and Privacy
+                        </h2>
+                    </div>
+                </section>
+
+                <CustomFormField
+                    fieldType={FormFieldType.CHECKBOX}
+                    control={form.control}
+                    name="treatmentConsent"
+                    label="I consent to treatment"
+                />
+
+                <CustomFormField
+                    fieldType={FormFieldType.CHECKBOX}
+                    control={form.control}
+                    name="disclosureConsent"
+                    label="I consent to disclosure of information"
+                />
+
+                <CustomFormField
+                    fieldType={FormFieldType.CHECKBOX}
+                    control={form.control}
+                    name="privacyConsent"
+                    label="I consent to privacy policy"
+                />
 
                 <SubmitButton isLoading={isLoading}>
                     Get Started

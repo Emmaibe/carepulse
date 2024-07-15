@@ -1,6 +1,6 @@
 "use client"
 
-import {FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
+import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
 import {Control} from "react-hook-form";
 import {FormFieldType} from "@/components/forms/PatientForm";
@@ -11,6 +11,8 @@ import {E164Number} from "libphonenumber-js";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {Select, SelectContent, SelectTrigger, SelectValue} from "@/components/ui/select";
+import {Textarea} from "@/components/ui/textarea";
+import {Checkbox} from "@/components/ui/checkbox";
 
 interface CustomProps {
     control: Control<any>,
@@ -61,6 +63,17 @@ const RenderField = ({ field, props }: { field: any, props: CustomProps }) => {
                         />
                     </FormControl>
                 </div>
+            )
+        case FormFieldType.TEXT_AREA:
+            return (
+                <FormControl>
+                    <Textarea
+                        {...field}
+                        placeholder={placeholder}
+                        className="shad-textArea"
+                        disabled={props.disabled}
+                    />
+                </FormControl>
             )
         case FormFieldType.PHONE_INPUT:
             return (
@@ -122,6 +135,22 @@ const RenderField = ({ field, props }: { field: any, props: CustomProps }) => {
             )
         case FormFieldType.SKELETON:
             return renderSkeleton ? renderSkeleton(field) : null;
+        case FormFieldType.CHECKBOX:
+            return (
+                <FormControl>
+                    <div className="flex items-center gap-4">
+                        <Checkbox
+                            id={props.name}
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                        />
+
+                        <label htmlFor={props.name} className="checkbox-label">
+                            {props.label}
+                        </label>
+                    </div>
+                </FormControl>
+            )
     }
 }
 

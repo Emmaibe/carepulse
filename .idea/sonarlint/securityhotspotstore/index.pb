@@ -37,10 +37,6 @@ G
 types/appwrite.types.ts,e/0/e01bec72b5093a3000d04008c3a350c9130661ae
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
-A
-app/patients/page,1/0/102a6f3ce3ba22dfc47f5436fd8e7eb9cfb835c5
-E
-app/patients/page.tsx,6/4/646fc05ab1728efa6a0dad93fc001030d4f8bc87
 W
 'app/patients/[userId]/register/page.tsx,f/3/f37c38c6bfe5588f582e78931ad50ba6dce7616c
 Q
@@ -50,3 +46,9 @@ B
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+K
+components/FileUploader.tsx,6/f/6fbd23401360a91c1e260f4a58d3e2cadc620fa9
+J
+components/ui/checkbox.tsx,2/d/2d1b7b339d78211c3424746ee1beb5824ad62394
+F
+components/ui/form.tsx,c/d/cd5a8b8fb765feebb98c206aec2e977db601dad4
