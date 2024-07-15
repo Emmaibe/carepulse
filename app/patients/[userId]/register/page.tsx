@@ -7,9 +7,9 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
     const user = await getUser(userId);
 
     return (
-        <div className="flex h-screen max-h-screen overflow-hidden">
-            <section className="remove-scrollbar container my-auto py-10 h-full overflow-y-scroll">
-                <div className="sub-container max-w-[496px]">
+        <div className="flex h-screen max-h-screen">
+            <section className="remove-scrollbar container">
+                <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
                     <Image
                         src={"/assets/icons/logo-full.svg"}
                         height={1000}
